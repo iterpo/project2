@@ -1,0 +1,26 @@
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8. 
+
+9.
+
+10.
+
+11.
+
+12.
+
+13.
+14.
+15.Where V is the volume, h is the height, a and b are the base edge vectors, γ is the angle between vectors a and b, and B is the area of the base.
+16.https://media.nagwa.com/493182149019/en/480/video.webm
+
+17.
+18.
+19.
+20.

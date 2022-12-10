@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Multiple Functions</title>
+    <script src="utils.js"></script>
+    <script src="calculations.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div class='title'>
+    <h2>
+        Project 2: Multiple Functions - (Author:Ioannis Terpo)
+    </h2>
+</div>
+
+<body onload="onLoad()">
+    <p id="functionOptionInform">
+    </p>
+    <div class="centerit"></div>
+    <div id="image_selector"></div>
+    <div class="box">
+        <div id="bord" class="container">
+            <div class="row">
+                <div class="column" id="cx">Τιμή X<input id="x"></div>
+                <div class="column" id="cy">Τιμή Y<input id="y"></div>
+                <div class="column" id="cz">Τιμή Z<input id="z"></div>
+                <div class="column" id="cw">Τιμή W<input id="w"></div>
+                <div class="column" id="cl">Τιμή L<input id="l"></div>
+                <div class="column" id="cm">Τιμή M<input id="m"></div>
+            </div>
+
+            <div class="row">
+                <div class="column"><label for="optionSelection">Υπολογισμός: </label></div>
+                <div class="column"></div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <select name="Calculate" id="optionSelection"
+                        onchange="paragraphOption(option.value);imageAdder(option.value);onResultChange();">
+                        <option value="0">Επέλεξε</option>
+                        <option value="1">Εμβαδό τριγώνου</option>
+                        <option value="2">Εμβαδό Τετράπλευρου</option>
+                        <option value="3">Εμβαδό Κύκλου</option>
+                        <option value="4">Εμβαδό ορθογώνιου παραλληλόγραμμου</option>
+                        <option value="5">Εμβαδό ορθογώνιου Τριγώνου</option>
+                    </select>
+                </div>
+                <div class="column">
+                    <p id="result" class="result"></p>
+                </div>
+                <div class="column"><button id="calcButton" onclick="oncalcButtonClick()">Υπολογισμός</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let inputX = document.getElementById("x");
+        let inputY = document.getElementById("y");
+        let inputZ = document.getElementById("z");
+        let inputW = document.getElementById("w");
+        let inputL = document.getElementById("l");
+        let inputM = document.getElementById("m");
+
+        let option = document.getElementById("optionSelection");
+        let result = document.getElementById("result");
+
+
+        function onLoad() {
+            inputX.disabled = true;
+            inputY.disabled = true;
+            inputZ.disabled = true;
+            inputW.disabled = true;
+            inputL.disabled = true;
+            inputM.disabled = true;
+            inputX.style.backgroundColor = "transparent";
+            inputY.style.backgroundColor = "transparent";
+            inputZ.style.backgroundColor = "transparent";
+            inputW.style.backgroundColor = "transparent";
+            inputL.style.backgroundColor = "transparent";
+            inputM.style.backgroundColor = "transparent";
+            paragraphOption(option.value);
+            imageAdder(option.value);
+
+        }
+
+        function onResultChange() {
+            calculationSelector(option.value);
+        }
+        function oncalcButtonClick() {
+            x = parseInt(inputX.value);             // init all empty
+            y = parseInt(inputY.value);
+            z = parseInt(inputZ.value);
+            w = parseInt(inputW.value);
+            l = parseInt(inputL.value);
+            m = parseInt(inputM.value);
+
+            switch (option.value) {
+                case '1':
+                    // Are Triangle
+                    result.innerHTML = areaTriangle(x, y, z);
+                    break;
+                case '2':
+                    // Are Quadrilateral 
+                    result.innerHTML = areaQuadrilateral(x, y, z, w, l, m);
+                    break;
+                case '3':
+                    // Area Circle 
+                    result.innerHTML = surfaceCircle(x);
+                    break;
+                case '4':
+                    // Area of a Rectangular Parallelogram
+                    result.innerHTML = areaRecatangularParallelogram(x, y);
+                    break;
+                case '5':
+                    // Area Triangle Rectangle
+                    result.innerHTML = areaTriangleRecatangular(x, y);
+                    break;
+            }
+
+        }
+
+
+        function calculationSelector(value) {
+            inputX.value = "";
+            inputY.value = "";
+            inputZ.value = "";
+            inputW.value = "";
+            inputL.value = "";
+            inputM.value = "";
+            switch (value) {
+                case '1':
+                    // Area Triangle
+                    enable_vars([1, 1, 1, 0, 0, 0]);
+                    greenBG([1, 1, 1, 0, 0, 0]);
+                    break;
+                case '2':
+                    // Area Quadrilateral...
+                    enable_vars([1, 1, 1, 1, 1, 1])
+                    greenBG([1, 1, 1, 1, 1, 1])
+                    break;
+                case '3':
+                    // Circle Area 
+                    enable_vars([1, 0, 0, 0, 0, 0])
+                    greenBG([1, 0, 0, 0, 0, 0])
+                    break;
+                case '4':
+                    // Area Rectangular Parallelogram
+                    enable_vars([1, 1, 0, 0, 0, 0])
+                    greenBG([1, 1, 0, 0, 0, 0])
+                    break;
+                case '5':
+                    // Area Triangle Rectangle
+                    enable_vars([1, 1, 0, 0, 0, 0])
+                    greenBG([1, 1, 0, 0, 0, 0])
+                    break;
+                default:
+                    // No option selected
+                    enable_vars([0, 0, 0, 0, 0, 0])
+                    greenBG([0, 0, 0, 0, 0, 0])
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

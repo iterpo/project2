@@ -1,0 +1,68 @@
+body {
+    background-color: rgb(149, 222, 128);
+}
+
+.title {
+    background-color: azure;
+    text-align: center;
+    border: 5px outset black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgb(248, 248, 248);
+    width: 50%;
+    border: 2px outset black;
+    margin: 10px;
+}
+
+.column {
+    float: left;
+    width: 33.3%;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+input,
+select {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    overflow: hidden;
+}
+
+.result {
+    text-align: center;
+}
+
+
+.box {
+    margin: 0px;
+    position: absolute;
+    padding: 10px;
+    left: 25%;
+}
+
+#image_selector img {
+    height: 250px;
+    max-height: 300px;
+    max-width: 300px;
+    width: 250;
+    margin: 10px;
+    position: relative;
+    padding: 10px;
+    left: 25%;
+}
