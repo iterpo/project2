@@ -40,22 +40,6 @@ function paragraphOption(option) {
     }
 }
 
-function imageAdder(option) {
-    // Image adder base on function selected
-
-    switch (option) {
-        case '1':
-            img_html(option);
-            break;
-        case '2':
-            img_html(option);
-        case '3':
-            img_html(option);
-        default:
-            img_html(option);
-            break;
-    }
-}
 
 function img_html(option) {
     let image_element = document.getElementById('image_selector')
@@ -76,20 +60,9 @@ function enable_vars(list) {
     for (col in list) {
         if (list[col] == 1) {
             vals[col].disabled = false;
-        } else {
-            vals[col].disabled = true;
-        }
-    }
-}
-
-
-function greenBG(list) {
-    // 1 = green -- 0 transparent
-    let vals = [inputX, inputY, inputZ, inputW, inputL, inputM]
-    for (col in list) {
-        if (list[col] == 1) {
             vals[col].style.backgroundColor = "lightgreen";
         } else {
+            vals[col].disabled = true;
             vals[col].style.backgroundColor = "transparent";
         }
     }
