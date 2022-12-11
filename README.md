@@ -3,16 +3,15 @@
 </h3>
 <br>
 <br>
-:white_check_mark:
+
 
 **Completed:**
-
 >1.Υπολογισμός Εμβαδού Τριγώνου<br>
 >2.Υπολογισμός Εμβαδού Τετράπλευρου<br>
 >3.Υπολογισμός Εμβαδού επιφάνειας κύκλου<br>
 >4 Υπολογισμός Εμβαδού ορθογωνίου παραλληλογράμμου<br>
 >5 Υπολογισμός Εμβαδού ορθογωνίου Τριγώνου<br>
-[Live Website Here ](https://ssoc2iterpo.github.io/project2/)
+[Live Website Here :white_check_mark:](https://ssoc2iterpo.github.io/project2/)
 
 
 **Extras:**<br>
