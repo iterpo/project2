@@ -1,6 +1,6 @@
-<center> <b>Start School Of Code</b><br>Project δημιουργίας σελίδας με HTML-CSS και Javascript που υλοποιει μία γνωστή μέθοδο
+<h1 align="center"> <b>Start School Of Code</b><br>Project δημιουργίας σελίδας με HTML-CSS και Javascript που υλοποιει μία γνωστή μέθοδο
 υπολογισμού κάποιας φυσικής ποσότητας 
-</center>
+</h1>
 <br>
 <br>
 
